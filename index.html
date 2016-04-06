@@ -79,6 +79,15 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
+            <script type="text/javascript" charset="utf-8">
+            function getFileNameOnServer(ftype){
+                document.getElementById("ifbox").src = "";
+                document.getElementById("ifbox").src = "getFileNames.php?ftype="+ftype;
+            }
+            </script>
+
+            <iframe id="ifbox" style="display:none;" src=""></iframe>
+
 			<script>
 				function get() {
 				$.getJSON("./project.json", function(data) {
@@ -88,36 +97,9 @@
 				});
 				}
 				get();
+                getFileNameOnServer('json');
 			</script>
 
-            <script type="text/javascript" charset="utf-8">
-            function getFileNameOnServer(ftype){
-                document.getElementById("ifbox").src = "";
-                document.getElementById("ifbox").src = "getFileName.php?ftype="+ftype;
-            }
-
-            function getFileNameInWindowsLocally(ftype){
-                var fso = new ActiveXObject("Scripting.FileSystemObject");
-                var dir = fso.GetFolder("path_to_directory");
-                var fc = new Enumerator(dir.Files);
-                var fname = "";
-                var s = "";
-                for (; !fc.atEnd(); fc.moveNext()){
-                    fname = fc.item()+"";
-                    fname = fname.substring(fname.lastIndexOf("\\")+1,fname.length);
-                    if(fname.indexOf("."+ftype)!=-1){
-                        document.getElementById("fnametxt").innerHTML = fname;
-                    }
-                }
-            }
-            </script>
-
-            <form>
-                <input type="button" value="getFNameFromServer" onclick="getFileNameOnServer('txt');" />
-                <input type="button" value="getFNameWindowsLocally" onclick="getFileNameInWindowsLocally('txt');" />
-                <p>filename: <span id="fnametxt"></span></p>
-            </form>
-            <iframe id="ifbox" style="display:none;" src=""></iframe>
 
 	</body>
 </html>
