@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>CSES Showcase</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper" class="wrapper">
+					<div id="header">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a href="index.html">Showcase</a></h1>
+								<p>Look at this shit!</p>
+							</div>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li class="current"><a href="index.html">Home</a></li>
+									<li>
+										<a href="#">Dropdown</a>
+										<ul>
+											<li><a href="#">Lorem ipsum</a></li>
+											<li><a href="#">Magna veroeros</a></li>
+											<li><a href="#">Etiam nisl</a></li>
+											<li><a href="#">Sed consequat</a></li>
+											<li><a href="#">Nisl tempus</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav>
+
+					</div>
+				</div>
+
+				<div id="intro-wrapper" class="wrapper style1">
+					<div class="title">Project 1</div>
+					<section id="intro" class="container">
+						<p class="style1" id="name">Shit.</p>
+						<p class="style2" id="description"> awesome
+						</p>
+						<p class="style3" id="author"> this is great</p>
+						<ul class="actions">
+							<li><a href="#" class="button style3 big">Contribute</a></li>
+						</ul>
+					</section>
+				</div>
+
+				<div id="intro-wrapper2" class="wrapper style3">
+					<div class="title">Project 1</div>
+					<section id="intro" class="container">
+						<p class="style1" id="name">Shit.</p>
+						<p class="style2" id="description"> awesome
+						</p>
+						<p class="style3" id="author"> this is great</p>
+						<ul class="actions">
+							<li><a href="#" class="button style3 big">Contribute</a></li>
+						</ul>
+					</section>
+				</div>
+
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+			<script>
+				function get() {
+				$.getJSON("./project.json", function(data) {
+					document.getElementById("name").innerHTML = data.name;
+					document.getElementById("description").innerHTML = data.description;
+					document.getElementById("author").innerHTML = "by " + data.author;
+				});
+				$.getJSON("./project.json", function(data) {
+					document.getElementById("name").innerHTML = data.name;
+					document.getElementById("description").innerHTML = data.description;
+					document.getElementById("author").innerHTML = "by " + data.author;
+				});
+				}
+				get();
+			</script>
+
+	</body>
+</html>

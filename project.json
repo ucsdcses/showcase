@@ -1,5 +1,5 @@
 {
-  name: "Test Project",
-  description: "Project made for testing",
-  author: "Joel"
+  "name": "Test Project",
+  "description": "Project made for testing",
+  "author": "Joel"
 }
