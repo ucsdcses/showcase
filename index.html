@@ -57,7 +57,7 @@
 					<div class="title">Project 2</div>
 					<section id="intro" class="container">
 						<p class="style1" id="name">Shit.</p>
-						<p class="style2" id="description"> awesome
+						<p class="style2" id="files"> awesome
 						</p>
 						<p class="style3" id="author"> this is great</p>
 						<ul class="actions">
@@ -89,6 +89,35 @@
 				}
 				get();
 			</script>
+
+            <script type="text/javascript" charset="utf-8">
+            function getFileNameOnServer(ftype){
+                document.getElementById("ifbox").src = "";
+                document.getElementById("ifbox").src = "getFileName.php?ftype="+ftype;
+            }
+
+            function getFileNameInWindowsLocally(ftype){
+                var fso = new ActiveXObject("Scripting.FileSystemObject");
+                var dir = fso.GetFolder("path_to_directory");
+                var fc = new Enumerator(dir.Files);
+                var fname = "";
+                var s = "";
+                for (; !fc.atEnd(); fc.moveNext()){
+                    fname = fc.item()+"";
+                    fname = fname.substring(fname.lastIndexOf("\\")+1,fname.length);
+                    if(fname.indexOf("."+ftype)!=-1){
+                        document.getElementById("fnametxt").innerHTML = fname;
+                    }
+                }
+            }
+            </script>
+
+            <form>
+                <input type="button" value="getFNameFromServer" onclick="getFileNameOnServer('txt');" />
+                <input type="button" value="getFNameWindowsLocally" onclick="getFileNameInWindowsLocally('txt');" />
+                <p>filename: <span id="fnametxt"></span></p>
+            </form>
+            <iframe id="ifbox" style="display:none;" src=""></iframe>
 
 	</body>
 </html>
