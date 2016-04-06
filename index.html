@@ -55,7 +55,7 @@
 				</div>
 
 				<div id="intro-wrapper2" class="wrapper style3">
-					<div class="title">Project 1</div>
+					<div class="title">Project 2</div>
 					<section id="intro" class="container">
 						<p class="style1" id="name">Shit.</p>
 						<p class="style2" id="description"> awesome
@@ -82,11 +82,6 @@
 
 			<script>
 				function get() {
-				$.getJSON("./project.json", function(data) {
-					document.getElementById("name").innerHTML = data.name;
-					document.getElementById("description").innerHTML = data.description;
-					document.getElementById("author").innerHTML = "by " + data.author;
-				});
 				$.getJSON("./project.json", function(data) {
 					document.getElementById("name").innerHTML = data.name;
 					document.getElementById("description").innerHTML = data.description;

@@ -1576,12 +1576,12 @@
 			}
 
 		.wrapper.style3 {
-			background: #90C3D4;
+			background: #000;
 		}
 
 			.wrapper.style3 .title {
-				background: #90C3D4;
-				color: #484d55;
+				background: #000;
+				color: #fff;
 			}
 
 			.wrapper.style3 .image {
@@ -1589,7 +1589,7 @@
 			}
 
 	#header-wrapper {
-		background-color: #000;
+		background-image: url("./images/header.gif");
 		background-size: cover;
 	}
 
